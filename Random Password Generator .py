@@ -11,27 +11,29 @@ symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
 print("Welcome to Python Random Password Generator.")
 
-number_of_numbers=int(input("How many numbers you want in pssword? "))
-number_of_letters=int(input("How many case letters you want in pssword? "))
-number_of_symbols=int(input("How many symbols you want in pssword? "))
+number_of_numbers = int(input("How many numbers you want in pssword? "))
+number_of_letters = int(input("How many case letters you want in pssword? "))
+number_of_symbols = int(input("How many symbols you want in pssword? "))
 
-password=''             # initializing a empty string
+password = ''             # initializing a empty string
 
 
-for char in range(1,number_of_letters+1):           # concatenating n numbers of numbers to empty string
-    password+=random.choice(letters)
+for char in range(1,(number_of_letters+1)):           # concatenating n numbers of numbers to empty string
+    password += random.choice(letters)
 
-for char in range(1,number_of_symbols+1):           # concatenating n numbers of letters to password string
-    password+=random.choice(symbols)
+for char in range(1,(number_of_symbols+1)):           # concatenating n numbers of letters to password string
+    password += random.choice(symbols)
 
-for char in range(1,number_of_numbers+1):           # concatenating n numbers of symbols to password string
-    password+=random.choice(numbers)
+for char in range(1,(number_of_numbers+1)):           # concatenating n numbers of symbols to password string
+    password += random.choice(numbers)
 #  got a string as password, but it is like n numbers + n letters + n symbols 
+
 #  to make password more powerfull, I am shuffling the password string
-final_password=''.join(random.sample(password,len(password)))
+final_password = ''.join(random.sample(password,len(password)))
 
 print("Wait for few seconds. Password is generating...")
 time.sleep(3)
+
 print(final_password)               # finally got a shuffled password
         
 
